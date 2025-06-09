@@ -1,0 +1,15 @@
+[project]
+name = "ampere-integration"
+version = "0.0.0"
+description = "OpenNebula deployment on Cloud Provider"
+authors = ["OpenNebula <contact@opennebula.io>"]
+license = "Apache-2.0"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[tool.hatch.envs.ampere-default]
+skip-install = true
+installer = "uv"
+dependencies = [
+  "ansible-core"
+]

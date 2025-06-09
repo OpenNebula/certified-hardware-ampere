@@ -1,0 +1,40 @@
+---
+all:
+  vars:
+    ansible_user: root
+    ensure_keys_for: [root]
+
+    ensure_hostname: true
+    ensure_hosts: true
+
+    unattend_disable: true
+    update_pkg_cache: true
+    features:
+      evpn: false
+
+    one_version: '6.99.85'
+    db_backend: SQLite
+    vn:
+      vxlan:
+        managed: true
+        template:
+          VN_MAD: vxlan
+          PHYDEV: enP2p2s0f1
+          BRIDGE: br1
+          VLAN_ID: 89
+          GUEST_MTU: 1450
+          AR:
+            TYPE: IP4
+            IP: 172.16.0.2
+            SIZE: 24
+          NETWORK_ADDRESS: 172.16.0.1
+          NETWORK_MASK: 255.255.255.0
+
+frontend:
+  hosts:
+    fe: { ansible_host: 10.0.1.22 }
+
+node:
+  hosts:
+    # host01: { ansible_host: 10.0.1.22 }
+    host02: { ansible_host: 10.0.1.23 }
