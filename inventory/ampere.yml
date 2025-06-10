@@ -4,8 +4,8 @@ all:
     ansible_user: root
     ensure_keys_for: [root]
 
-    ensure_hostname: true
-    ensure_hosts: true
+    ensure_hostname: false
+    ensure_hosts: false
 
     unattend_disable: true
     update_pkg_cache: true
@@ -36,5 +36,5 @@ frontend:
 
 node:
   hosts:
-    # host01: { ansible_host: 10.0.1.22 }
-    host02: { ansible_host: 10.0.1.23 }
+    amp01: { ansible_host: 10.0.1.22 }
+    amp02: { ansible_host: 10.0.1.23 }
