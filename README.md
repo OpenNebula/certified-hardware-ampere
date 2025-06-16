@@ -42,6 +42,12 @@ A detailed guide to provision the required reference infrastructure MUST be prov
    make main
    ```
 
+1. Perform the ARM specific configuration steps:
+
+   ```shell
+   make ampere
+   ```
+
 1. To verify the deployment using the configurations in the default inventory file:
 
    ```shell

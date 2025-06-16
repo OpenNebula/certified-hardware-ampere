@@ -15,8 +15,8 @@ submodule-requirements:
 
 # Explicitly expose these targets to the parent Makefile.
 main verification:
-	$(MAKE) -C submodule-one-deploy-validation V=vv I=$(SELF)/inventory/ampere.yml $@
+	$(MAKE) -C submodule-one-deploy-validation I=$(SELF)/inventory/ampere.yml $@
 
 ampere: $(ENV_CSP_DEFAULT)
 	cd $(SELF)/ && \
-	$(call ENV_RUN,ampere-default) ansible-playbook $(SELF)/playbooks/ampere.yml
+	$(call ENV_RUN,ampere-default) ansible-playbook -vv $(SELF)/playbooks/ampere.yml

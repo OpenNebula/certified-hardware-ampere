@@ -1,9 +1,20 @@
 ---
 - hosts: "{{ frontend_group | d('frontend') }}"
-  roles:
-    - role: example
-          
-- hosts: "{{ node_group | d('node') }}"
-  roles:
-    - role: example
+  tasks:
+    - name: Configure DEFAULT_CDROM_DEVICE_PREFIX in oned.conf
+      opennebula.deploy.augeas_module:
+        lens: oned
+        file: "/etc/one/oned.conf"
+        command: set
+        path: DEFAULT_CDROM_DEVICE_PREFIX
+        value: '"sd"'
+
+
+    - name: Configure virtual keyboard device using RAW in vmm_exec_kvm.conf
+      opennebula.deploy.augeas_module:
+        lens: oned
+        file: "/etc/one/vmm_exec/vmm_exec_kvm.conf"
+        command: set
+        path: RAW
+        value: "\"<devices><input type='keyboard' bus='virtio'/></devices>\""
 
