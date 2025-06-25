@@ -40,16 +40,16 @@ Update the [inventory](./inventory/) values to match the provisioned infrastruct
 
 | Description                                 | Variable Names                      | Files/Location                                      |
 |---------------------------------------------|-------------------------------------|-----------------------------------------------------|
-| Frontend Host IP                            | `ansible_host`                      | [inventory/ampere.yml](./inventory/)    | 
-| KVM Host IPs                            | `ansible_host`                      | [inventory/ampere.yml](./inventory/)     | 
-| VXLAN PHYDEV                                 | `vn.vxlan.template.PHYDEV`          | [inventory/ampere.yml](./inventory/)                               | 
-| GUI password of `oneadmin`       | `one_pass` | [inventory/*.yml](./inventory/)           | 
+| Frontend Host IP                            | `ansible_host`                      | [inventory/ampere.yml](./inventory/ampere.yml)    | 
+| KVM Host IPs                            | `ansible_host`                      | [inventory/ampere.yml](./inventory/ampere.yml)     | 
+| VXLAN PHYDEV                                 | `vn.vxlan.template.PHYDEV`          | [inventory/ampere.yml](./inventory/ampere.yml)                               | 
+| GUI password of `oneadmin`       | `one_pass` | [inventory/ampere.yml](./inventory/ampere.yml)           | 
 
 **Optional customization parameters**:
 | Description                                 | Variable Names                      | Files/Location                                      |
 |---------------------------------------------|-------------------------------------|-----------------------------------------------------|
-| VXLAN Starting IP                                 | `vn.vxlan.template.AR.IP`          | [inventory/ampere.yml](./inventory/)                               | 
-| VXLAN IP range size                                 | `vn.vxlan.template.AR.SIZE`          | [inventory/ampere.yml](./inventory/)                               | 
+| VXLAN Starting IP                                 | `vn.vxlan.template.AR.IP`          | [inventory/ampere.yml](./inventory/ampere.yml)                               | 
+| VXLAN IP range size                                 | `vn.vxlan.template.AR.SIZE`          | [inventory/ampere.yml](./inventory/ampere.yml)                               | 
 
 ## Deployment and Verification
 
