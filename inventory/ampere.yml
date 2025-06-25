@@ -13,6 +13,7 @@ all:
       evpn: false
 
     one_version: '6.99.85'
+    one_pass: 'yourpassword'
     db_backend: SQLite
     vn:
       vxlan:
