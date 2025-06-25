@@ -13,6 +13,10 @@ test_vnet_name: 'vxlan'
 # Marketplace App name for test VM instantiation
 test_vm_name: 'Alpine Linux 3.21 (aarch64)'
 
+test_vm_template_extra: |
+  CPU_MODEL=[
+    MODEL="host-passthrough" ]
+
 # Connectivity matrix test's parameters
 conn_matrix_bridge_name: br1
 conn_matrix_ping_count: 10
