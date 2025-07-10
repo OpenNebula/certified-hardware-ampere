@@ -7,7 +7,7 @@ This repository contains the needed code and documentation to perform an OpenNeb
 - [Requirements](#requirements)
 - [Hardware Specifications](#hardware-specifications)
 - [Required Parameters](#required-parameters)
-- [Deployment and Verification](#deployment-and-verification)
+- [Deployment and Validation](#deployment-and-validation)
 
 ## Requirements
 
@@ -32,7 +32,7 @@ This repository contains the needed code and documentation to perform an OpenNeb
 ## Hardware Specifications
 
 See the details of the Ampere servers that has been used to certify the hardware platform for OpenNebula deployment: [Ampere OpenNebula](https://docs.opennebula.io/7.0/solutions/certified_hw_platforms/ampere_opennebula/). 
-After the servers have been provisioned, take note of the required parameters that are required for automation of OpenNebula deployment and verification.
+After the servers have been provisioned, take note of the required parameters that are required for automation of OpenNebula deployment and validation.
 
 ## Required Parameters
 
@@ -51,7 +51,7 @@ Update the [inventory](./inventory/) values to match the provisioned infrastruct
 | VXLAN Starting IP                                 | `vn.vxlan.template.AR.IP`          | [inventory/ampere.yml](./inventory/ampere.yml)                               | 
 | VXLAN IP range size                                 | `vn.vxlan.template.AR.SIZE`          | [inventory/ampere.yml](./inventory/ampere.yml)                               | 
 
-## Deployment and Verification
+## Deployment and Validation
 
 Use the provided Makefile commands to automate deployment and testing:
 
@@ -72,7 +72,7 @@ Use the provided Makefile commands to automate deployment and testing:
 1. Verify the deployment:
 
    ```shell
-   make verification
+   make validation
    ```
 
 For more information about the submodule's tooling, refer to its [README.md](https://github.com/OpenNebula/one-deploy-validation/blob/master/README.md) and for detailed documentation on the deployment automation refer to the [one-deploy repo](https://github.com/OpenNebula/one-deploy).

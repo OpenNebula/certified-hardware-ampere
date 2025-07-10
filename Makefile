@@ -8,13 +8,13 @@ $(ENV_CSP_DEFAULT):
 	hatch env create ampere-default
 endif
 
-.PHONY: submodule-requirements deployment verification specifics
+.PHONY: submodule-requirements deployment validation specifics
 
 submodule-requirements:
 	$(MAKE) -C submodule-one-deploy requirements
 
 # Explicitly expose these targets to the parent Makefile.
-verification:
+validation:
 	$(MAKE) -C submodule-one-deploy-validation I=$(SELF)/inventory/ampere.yml $@
 
 deployment: 
