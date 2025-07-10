@@ -8,18 +8,18 @@ $(ENV_CSP_DEFAULT):
 	hatch env create ampere-default
 endif
 
-.PHONY: submodule-requirements main verification ampere
+.PHONY: submodule-requirements deployment verification specifics
 
 submodule-requirements:
-	$(MAKE) -C submodule-one-deploy-validation requirements
+	$(MAKE) -C submodule-one-deploy requirements
 
 # Explicitly expose these targets to the parent Makefile.
 verification:
 	$(MAKE) -C submodule-one-deploy-validation I=$(SELF)/inventory/ampere.yml $@
 
 deployment: 
-	$(MAKE) -C submodule-one-deploy-validation I=$(SELF)/inventory/ampere.yml main
+	$(MAKE) -C submodule-one-deploy I=$(SELF)/inventory/ampere.yml main
 
 specifics: $(ENV_CSP_DEFAULT)
 	cd $(SELF)/ && \
-	$(call ENV_RUN,cloud-provider-default) ansible-playbook $(SELF)/playbooks/ampere.yml
+	$(call ENV_RUN,ampere-default) ansible-playbook $(SELF)/playbooks/ampere.yml

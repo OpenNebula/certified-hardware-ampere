@@ -17,7 +17,7 @@ This repository contains the needed code and documentation to perform an OpenNeb
    pip install hatch
    ```
 
-1. Initialize the dependent `one-deploy-validation` submodule
+1. Initialize the dependent `one-deploy-validation` and `one-deploy` submodule
 
    ```shell
    git submodule update --init --remote --merge
